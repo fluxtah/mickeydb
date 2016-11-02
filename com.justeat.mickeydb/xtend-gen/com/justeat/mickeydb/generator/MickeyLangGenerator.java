@@ -26,6 +26,7 @@ import com.justeat.mickeydb.mickeyLang.MickeyFile;
 import com.justeat.mickeydb.mickeyLang.MigrationBlock;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -33,7 +34,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure2;
 
 /**
@@ -75,8 +75,8 @@ public class MickeyLangGenerator implements IGenerator {
     MickeyModel mickeyModel = this.assembler.assemble(resource);
     final String stubOutput = MickeyOutputConfigurationProvider.DEFAULT_STUB_OUTPUT;
     Collection<MickeyDatabaseModel> _values = mickeyModel.databases.values();
-    final Procedure1<MickeyDatabaseModel> _function = new Procedure1<MickeyDatabaseModel>() {
-      public void apply(final MickeyDatabaseModel it) {
+    final Consumer<MickeyDatabaseModel> _function = new Consumer<MickeyDatabaseModel>() {
+      public void accept(final MickeyDatabaseModel it) {
         ContentUris content = new ContentUris();
         content.init(it);
         String _packageName = it.getPackageName();
@@ -120,32 +120,32 @@ public class MickeyLangGenerator implements IGenerator {
         fsa.generateFile(_resolveFileName_4, stubOutput, _generateStub_1);
         SqliteDatabaseSnapshot _snapshot_2 = it.getSnapshot();
         ArrayList<CreateTableStatement> _tables = _snapshot_2.getTables();
-        final Procedure1<CreateTableStatement> _function = new Procedure1<CreateTableStatement>() {
-          public void apply(final CreateTableStatement statement) {
+        final Consumer<CreateTableStatement> _function = new Consumer<CreateTableStatement>() {
+          public void accept(final CreateTableStatement statement) {
             MickeyLangGenerator.this.generateActiveRecordEntity(it, resource, fsa, ((CreateTableStatement) statement));
           }
         };
-        IterableExtensions.<CreateTableStatement>forEach(_tables, _function);
+        _tables.forEach(_function);
         SqliteDatabaseSnapshot _snapshot_3 = it.getSnapshot();
         ArrayList<CreateViewStatement> _views = _snapshot_3.getViews();
-        final Procedure1<CreateViewStatement> _function_1 = new Procedure1<CreateViewStatement>() {
-          public void apply(final CreateViewStatement statement) {
+        final Consumer<CreateViewStatement> _function_1 = new Consumer<CreateViewStatement>() {
+          public void accept(final CreateViewStatement statement) {
             MickeyLangGenerator.this.generateActiveRecordEntity(it, resource, fsa, ((CreateViewStatement) statement));
           }
         };
-        IterableExtensions.<CreateViewStatement>forEach(_views, _function_1);
-        final Procedure1<CreateTableStatement> _function_2 = new Procedure1<CreateTableStatement>() {
-          public void apply(final CreateTableStatement statement) {
+        _views.forEach(_function_1);
+        final Consumer<CreateTableStatement> _function_2 = new Consumer<CreateTableStatement>() {
+          public void accept(final CreateTableStatement statement) {
             MickeyLangGenerator.this.generateActiveRecordEntity(it, resource, fsa, ((CreateTableStatement) statement));
           }
         };
-        IterableExtensions.<CreateTableStatement>forEach(it.initTables, _function_2);
-        final Procedure1<CreateViewStatement> _function_3 = new Procedure1<CreateViewStatement>() {
-          public void apply(final CreateViewStatement statement) {
+        it.initTables.forEach(_function_2);
+        final Consumer<CreateViewStatement> _function_3 = new Consumer<CreateViewStatement>() {
+          public void accept(final CreateViewStatement statement) {
             MickeyLangGenerator.this.generateActiveRecordEntity(it, resource, fsa, ((CreateViewStatement) statement));
           }
         };
-        IterableExtensions.<CreateViewStatement>forEach(it.initViews, _function_3);
+        it.initViews.forEach(_function_3);
         final Procedure2<MigrationBlock, Integer> _function_4 = new Procedure2<MigrationBlock, Integer>() {
           public void apply(final MigrationBlock item, final Integer index) {
             String _packageName = it.getPackageName();
@@ -154,8 +154,8 @@ public class MickeyLangGenerator implements IGenerator {
           }
         };
         IterableExtensions.<MigrationBlock>forEach(it.migrations, _function_4);
-        final Procedure1<ContentUriInfo> _function_5 = new Procedure1<ContentUriInfo>() {
-          public void apply(final ContentUriInfo p1) {
+        final Consumer<ContentUriInfo> _function_5 = new Consumer<ContentUriInfo>() {
+          public void accept(final ContentUriInfo p1) {
             String _packageName = it.getPackageName();
             String _concat = _packageName.concat(".actions");
             String _name = p1.getName();
@@ -166,10 +166,10 @@ public class MickeyLangGenerator implements IGenerator {
             fsa.generateFile(_resolveFileName, _generate);
           }
         };
-        IterableExtensions.<ContentUriInfo>forEach(content.uris, _function_5);
+        content.uris.forEach(_function_5);
       }
     };
-    IterableExtensions.<MickeyDatabaseModel>forEach(_values, _function);
+    _values.forEach(_function);
   }
   
   public void generateActiveRecordEntity(final MickeyDatabaseModel model, final Resource resource, final IFileSystemAccess fsa, final CreateTableStatement statement) {

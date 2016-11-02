@@ -87,7 +87,7 @@ public class ActiveRecordGenerator {
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("private static ActiveRecordFactory<");
+    _builder.append("private static final ActiveRecordFactory<");
     String _name_3 = stmt.getName();
     String _pascalize_5 = Strings.pascalize(_name_3);
     _builder.append(_pascalize_5, "\t");
@@ -216,7 +216,7 @@ public class ActiveRecordGenerator {
     _builder.append("    ");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("public static String[] PROJECTION = {");
+    _builder.append("public static final String[] PROJECTION = {");
     _builder.newLine();
     _builder.append("    \t");
     CharSequence _generateProjectionArrayMembers = this.generateProjectionArrayMembers(stmt);

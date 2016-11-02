@@ -60,9 +60,6 @@ public class ContentProviderGenerator {
     _builder.append("import com.justeat.mickeydb.MickeyOpenHelper;");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("import com.justeat.mickeydb.DefaultContentProviderActions;");
-    _builder.newLine();
-    _builder.append("\t\t");
     _builder.append("import com.justeat.mickeydb.ContentProviderActions;");
     _builder.newLine();
     {
@@ -110,7 +107,6 @@ public class ContentProviderGenerator {
     _builder.append(_size, "\t\t\t");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("public Abstract");

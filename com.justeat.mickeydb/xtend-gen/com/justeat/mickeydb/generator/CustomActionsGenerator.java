@@ -1,6 +1,7 @@
 package com.justeat.mickeydb.generator;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import com.justeat.mickeydb.ContentUriInfo;
 import com.justeat.mickeydb.MickeyDatabaseModel;
 import com.justeat.mickeydb.ModelUtil;
@@ -138,8 +139,22 @@ public class CustomActionsGenerator {
     }
     _builder.append("import java.util.List;");
     _builder.newLine();
-    _builder.append("import java.util.ArrayList;");
-    _builder.newLine();
+    {
+      ActionStatement _action_4 = content.getAction();
+      EList<ContentNotificationUri> _notifications = null;
+      if (_action_4!=null) {
+        _notifications=_action_4.getNotifications();
+      }
+      int _size = 0;
+      if (_notifications!=null) {
+        _size=_notifications.size();
+      }
+      boolean _greaterThan = (_size > 0);
+      if (_greaterThan) {
+        _builder.append("import java.util.ArrayList;");
+        _builder.newLine();
+      }
+    }
     _builder.append("import java.util.Set;");
     _builder.newLine();
     _builder.append("import com.justeat.mickeydb.util.Uris;");
@@ -303,19 +318,19 @@ public class CustomActionsGenerator {
     _builder.append("public List<Uri> getNotifyUris(MickeyContentProvider provider, Uri uri) {");
     _builder.newLine();
     {
-      ActionStatement _action_4 = content.getAction();
-      EList<ContentNotificationUri> _notifications = null;
-      if (_action_4!=null) {
-        _notifications=_action_4.getNotifications();
+      ActionStatement _action_5 = content.getAction();
+      EList<ContentNotificationUri> _notifications_1 = null;
+      if (_action_5!=null) {
+        _notifications_1=_action_5.getNotifications();
       }
-      int _size = 0;
-      if (_notifications!=null) {
-        _size=_notifications.size();
+      int _size_1 = 0;
+      if (_notifications_1!=null) {
+        _size_1=_notifications_1.size();
       }
-      boolean _greaterThan = (_size > 0);
-      if (_greaterThan) {
+      boolean _greaterThan_1 = (_size_1 > 0);
+      if (_greaterThan_1) {
         _builder.append("\t\t");
-        _builder.append("ArrayList<Uri> notifyUris = new ArrayList<Uri>();");
+        _builder.append("List<Uri> notifyUris = new ArrayList<>();");
         _builder.newLine();
         {
           if (hasSlugParams) {
@@ -329,9 +344,9 @@ public class CustomActionsGenerator {
           }
         }
         {
-          ActionStatement _action_5 = content.getAction();
-          EList<ContentNotificationUri> _notifications_1 = _action_5.getNotifications();
-          for(final ContentNotificationUri notificationUri : _notifications_1) {
+          ActionStatement _action_6 = content.getAction();
+          EList<ContentNotificationUri> _notifications_2 = _action_6.getNotifications();
+          for(final ContentNotificationUri notificationUri : _notifications_2) {
             _builder.append("\t\t");
             _builder.append("notifyUris.add(");
             CharSequence _createNotifyStatement = this.createNotifyStatement(model, content, notificationUri);
@@ -363,8 +378,8 @@ public class CustomActionsGenerator {
         _builder.append("public void addContentValuesFromUri(MickeyContentProvider provider, Uri uri, ContentValues values) {");
         _builder.newLine();
         {
-          ActionStatement _action_6 = content.getAction();
-          boolean _notEquals_2 = (!Objects.equal(_action_6, null));
+          ActionStatement _action_7 = content.getAction();
+          boolean _notEquals_2 = (!Objects.equal(_action_7, null));
           if (_notEquals_2) {
             {
               if (hasSlugParams) {
@@ -380,8 +395,8 @@ public class CustomActionsGenerator {
               }
             }
             {
-              ActionStatement _action_7 = content.getAction();
-              ContentUri _uri_1 = _action_7.getUri();
+              ActionStatement _action_8 = content.getAction();
+              ContentUri _uri_1 = _action_8.getUri();
               EList<ContentUriSegment> _segments_1 = _uri_1.getSegments();
               for(final ContentUriSegment seg : _segments_1) {
                 {
@@ -393,8 +408,8 @@ public class CustomActionsGenerator {
                     _builder.append("\t");
                     _builder.append("\t");
                     _builder.append("values.put(");
-                    ActionStatement _action_8 = content.getAction();
-                    TableDefinition _type_6 = _action_8.getType();
+                    ActionStatement _action_9 = content.getAction();
+                    TableDefinition _type_6 = _action_9.getType();
                     String _name_1 = _type_6.getName();
                     String _pascalize_5 = Strings.pascalize(_name_1);
                     _builder.append(_pascalize_5, "\t\t");
@@ -559,47 +574,47 @@ public class CustomActionsGenerator {
       ActionStatement _action_1 = content.getAction();
       EList<ContentUriQueryParam> _params = _action_1.getParams();
       for(final ContentUriQueryParam queryParam : _params) {
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.append("if(queryKeys.contains(");
         String _type_2 = content.getType();
         String _pascalize_2 = Strings.pascalize(_type_2);
-        _builder.append(_pascalize_2, "\t\t");
+        _builder.append(_pascalize_2, "\t");
         _builder.append(".");
         ColumnSource _column = queryParam.getColumn();
         String _name_4 = _column.getName();
         String _underscore_2 = Strings.underscore(_name_4);
         String _upperCase_2 = _underscore_2.toUpperCase();
-        _builder.append(_upperCase_2, "\t\t");
+        _builder.append(_upperCase_2, "\t");
         _builder.append(")) {");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.append("\t");
         _builder.append("query.expr(");
         String _type_3 = content.getType();
         String _pascalize_3 = Strings.pascalize(_type_3);
-        _builder.append(_pascalize_3, "\t\t\t");
+        _builder.append(_pascalize_3, "\t\t");
         _builder.append(".");
         ColumnSource _column_1 = queryParam.getColumn();
         String _name_5 = _column_1.getName();
         String _underscore_3 = Strings.underscore(_name_5);
         String _upperCase_3 = _underscore_3.toUpperCase();
-        _builder.append(_upperCase_3, "\t\t\t");
+        _builder.append(_upperCase_3, "\t\t");
         _builder.append(", ");
         CharSequence _generateOperator = this.generateOperator(queryParam);
-        _builder.append(_generateOperator, "\t\t\t");
+        _builder.append(_generateOperator, "\t\t");
         _builder.append(", ");
         ColumnSource _column_2 = queryParam.getColumn();
         String _name_6 = _column_2.getName();
         String _camelize_2 = Strings.camelize(_name_6);
-        _builder.append(_camelize_2, "\t\t\t");
+        _builder.append(_camelize_2, "\t\t");
         _builder.append("QueryParam);");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.append("}");
         _builder.newLine();
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.newLine();
-        _builder.append("\t\t");
+        _builder.append("\t");
       }
     }
     return _builder;
@@ -724,43 +739,40 @@ public class CustomActionsGenerator {
       ActionStatement _action = content.getAction();
       ContentUri _uri = _action.getUri();
       EList<ContentUriSegment> _segments = _uri.getSegments();
-      Iterable<Pair<Integer, ContentUriSegment>> _indexed = IterableExtensions.<ContentUriSegment>indexed(_segments);
-      for(final Pair<Integer, ContentUriSegment> entry : _indexed) {
+      Iterable<ContentUriParamSegment> _filter = Iterables.<ContentUriParamSegment>filter(_segments, 
+        ContentUriParamSegment.class);
+      Iterable<Pair<Integer, ContentUriParamSegment>> _indexed = IterableExtensions.<ContentUriParamSegment>indexed(_filter);
+      for(final Pair<Integer, ContentUriParamSegment> entry : _indexed) {
+        _builder.newLineIfNotEmpty();
+        ContentUriParamSegment _value = entry.getValue();
+        ContentUriParamSegment param = ((ContentUriParamSegment) _value);
         _builder.newLineIfNotEmpty();
         {
-          ContentUriSegment _value = entry.getValue();
-          if ((_value instanceof ContentUriParamSegment)) {
-            ContentUriSegment _value_1 = entry.getValue();
-            ContentUriParamSegment param = ((ContentUriParamSegment) _value_1);
+          ColumnSource _param = param.getParam();
+          ColumnType _inferredColumnType = ModelUtil.getInferredColumnType(_param);
+          boolean _notEquals = (!Objects.equal(_inferredColumnType, ColumnType.TEXT));
+          if (_notEquals) {
+            _builder.append("long ");
+            ColumnSource _param_1 = param.getParam();
+            String _name = _param_1.getName();
+            String _camelize = Strings.camelize(_name);
+            _builder.append(_camelize, "");
+            _builder.append("Slug = Long.parseLong(segments.get(");
+            Integer _key = entry.getKey();
+            _builder.append(_key, "");
+            _builder.append("));");
             _builder.newLineIfNotEmpty();
-            {
-              ColumnSource _param = param.getParam();
-              ColumnType _inferredColumnType = ModelUtil.getInferredColumnType(_param);
-              boolean _notEquals = (!Objects.equal(_inferredColumnType, ColumnType.TEXT));
-              if (_notEquals) {
-                _builder.append("long ");
-                ColumnSource _param_1 = param.getParam();
-                String _name = _param_1.getName();
-                String _camelize = Strings.camelize(_name);
-                _builder.append(_camelize, "");
-                _builder.append("Slug = Long.parseLong(segments.get(");
-                Integer _key = entry.getKey();
-                _builder.append(_key, "");
-                _builder.append("));");
-                _builder.newLineIfNotEmpty();
-              } else {
-                _builder.append("String ");
-                ColumnSource _param_2 = param.getParam();
-                String _name_1 = _param_2.getName();
-                String _camelize_1 = Strings.camelize(_name_1);
-                _builder.append(_camelize_1, "");
-                _builder.append("Slug = segments.get(");
-                Integer _key_1 = entry.getKey();
-                _builder.append(_key_1, "");
-                _builder.append(");");
-                _builder.newLineIfNotEmpty();
-              }
-            }
+          } else {
+            _builder.append("String ");
+            ColumnSource _param_2 = param.getParam();
+            String _name_1 = _param_2.getName();
+            String _camelize_1 = Strings.camelize(_name_1);
+            _builder.append(_camelize_1, "");
+            _builder.append("Slug = segments.get(");
+            Integer _key_1 = entry.getKey();
+            _builder.append(_key_1, "");
+            _builder.append(");");
+            _builder.newLineIfNotEmpty();
           }
         }
       }
@@ -774,20 +786,27 @@ public class CustomActionsGenerator {
       ActionStatement _action = content.getAction();
       ContentUri _uri = _action.getUri();
       EList<ContentUriSegment> _segments = _uri.getSegments();
-      Iterable<Pair<Integer, ContentUriSegment>> _indexed = IterableExtensions.<ContentUriSegment>indexed(_segments);
-      for(final Pair<Integer, ContentUriSegment> entry : _indexed) {
+      Iterable<ContentUriParamSegment> _filter = Iterables.<ContentUriParamSegment>filter(_segments, 
+        ContentUriParamSegment.class);
+      Iterable<Pair<Integer, ContentUriParamSegment>> _indexed = IterableExtensions.<ContentUriParamSegment>indexed(_filter);
+      for(final Pair<Integer, ContentUriParamSegment> entry : _indexed) {
+        _builder.newLineIfNotEmpty();
+        ContentUriParamSegment _value = entry.getValue();
+        ContentUriParamSegment param = ((ContentUriParamSegment) _value);
         _builder.newLineIfNotEmpty();
         {
-          ContentUriSegment _value = entry.getValue();
-          if ((_value instanceof ContentUriParamSegment)) {
-            ContentUriSegment _value_1 = entry.getValue();
-            ContentUriParamSegment param = ((ContentUriParamSegment) _value_1);
-            _builder.newLineIfNotEmpty();
+          ActionStatement _action_1 = content.getAction();
+          EList<ContentNotificationUri> _notifications = _action_1.getNotifications();
+          ColumnSource _param = param.getParam();
+          String _name = _param.getName();
+          String _camelize = Strings.camelize(_name);
+          boolean _hasSegment = this.hasSegment(_notifications, _camelize);
+          if (_hasSegment) {
             _builder.append("String ");
-            ColumnSource _param = param.getParam();
-            String _name = _param.getName();
-            String _camelize = Strings.camelize(_name);
-            _builder.append(_camelize, "");
+            ColumnSource _param_1 = param.getParam();
+            String _name_1 = _param_1.getName();
+            String _camelize_1 = Strings.camelize(_name_1);
+            _builder.append(_camelize_1, "");
             _builder.append("Slug = segments.get(");
             Integer _key = entry.getKey();
             _builder.append(_key, "");
@@ -798,6 +817,24 @@ public class CustomActionsGenerator {
       }
     }
     return _builder;
+  }
+  
+  public boolean hasSegment(final EList<ContentNotificationUri> notifications, final String value) {
+    final Function1<ContentNotificationUri, Boolean> _function = new Function1<ContentNotificationUri, Boolean>() {
+      public Boolean apply(final ContentNotificationUri item) {
+        NotifyContentUri _uri = item.getUri();
+        EList<NotifyContentUriSegment> _segments = _uri.getSegments();
+        final Function1<NotifyContentUriSegment, Boolean> _function = new Function1<NotifyContentUriSegment, Boolean>() {
+          public Boolean apply(final NotifyContentUriSegment segment) {
+            String _name = segment.getName();
+            String _camelize = Strings.camelize(_name);
+            return Boolean.valueOf(_camelize.equals(value));
+          }
+        };
+        return Boolean.valueOf(IterableExtensions.<NotifyContentUriSegment>exists(_segments, _function));
+      }
+    };
+    return IterableExtensions.<ContentNotificationUri>exists(notifications, _function);
   }
   
   public CharSequence generateOperator(final ContentUriQueryParam param) {

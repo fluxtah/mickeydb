@@ -97,16 +97,16 @@ public class ContentProviderContractGenerator {
     _builder.append("\t\t");
     _builder.append("try {");
     _builder.newLine();
-    _builder.append("    \t\t");
+    _builder.append("\t\t  \t\t");
     _builder.newLine();
-    _builder.append("    \t\t");
+    _builder.append("\t\t  \t\t");
     _builder.append("ClassLoader loader = ");
     String _databaseName_2 = model.getDatabaseName();
     String _pascalize = Strings.pascalize(_databaseName_2);
-    _builder.append(_pascalize, "    \t\t");
+    _builder.append(_pascalize, "\t\t  \t\t");
     _builder.append("Contract.class.getClassLoader();");
     _builder.newLineIfNotEmpty();
-    _builder.append("    \t\t");
+    _builder.append("\t\t  \t\t");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("Class<?> clz = loader.loadClass(\"");
@@ -127,16 +127,7 @@ public class ContentProviderContractGenerator {
     _builder.append("authority = declaredField.get(null).toString();");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("} catch (ClassNotFoundException e) {} ");
-    _builder.newLine();
-    _builder.append("    \t");
-    _builder.append("catch (NoSuchFieldException e) {} ");
-    _builder.newLine();
-    _builder.append("    \t");
-    _builder.append("catch (IllegalArgumentException e) {");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("} catch (IllegalAccessException e) {");
+    _builder.append("} catch (ClassNotFoundException | NoSuchFieldException | IllegalArgumentException | IllegalAccessException ignore) {");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("}");
@@ -151,7 +142,7 @@ public class ContentProviderContractGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("\t   ");
     _builder.append("public static final Uri BASE_CONTENT_URI = Uri.parse(\"content://\" + CONTENT_AUTHORITY);");
     _builder.newLine();
     _builder.newLine();
@@ -305,7 +296,7 @@ public class ContentProviderContractGenerator {
         _builder.newLine();
       }
     }
-    _builder.append("\t\t\t");
+    _builder.append("\t");
     _builder.newLine();
     {
       ArrayList<CreateTableStatement> _tables_1 = snapshot.getTables();
@@ -345,18 +336,16 @@ public class ContentProviderContractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("static Map<Uri, Set<Uri>> REFERENCING_VIEWS;");
+    _builder.append("static final Map<Uri, Set<Uri>> REFERENCING_VIEWS;");
     _builder.newLine();
-    _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("static {");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("Map<Uri, Set<Uri>> map = new HashMap<Uri, Set<Uri>>();");
+    _builder.append("Map<Uri, Set<Uri>> map = new HashMap<>();");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.newLine();
@@ -580,7 +569,7 @@ public class ContentProviderContractGenerator {
             _builder.newLineIfNotEmpty();
           }
         }
-        _builder.append("\t\t");
+        _builder.append("\t\t\t\t");
       }
     }
     _builder.append(";");
@@ -891,17 +880,17 @@ public class ContentProviderContractGenerator {
     _builder.append("\t ");
     _builder.append("*/");
     _builder.newLine();
-    _builder.append("    ");
-    _builder.append("public static final String CONTENT_TYPE =");
+    _builder.append("\t   ");
+    _builder.append("static final String CONTENT_TYPE =");
     _builder.newLine();
-    _builder.append("            ");
+    _builder.append("\t           ");
     _builder.append("\"vnd.android.cursor.dir/vnd.");
     String _databaseName = model.getDatabaseName();
     String _lowerCase = _databaseName.toLowerCase();
-    _builder.append(_lowerCase, "            ");
+    _builder.append(_lowerCase, "\t           ");
     _builder.append(".");
     String _name_5 = stmt.getName();
-    _builder.append(_name_5, "            ");
+    _builder.append(_name_5, "\t           ");
     _builder.append("\";");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
@@ -952,16 +941,16 @@ public class ContentProviderContractGenerator {
     _builder.append("\t ");
     _builder.append("*/");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("\t   ");
     _builder.append("public static Uri buildUriWithId(long id) {");
     _builder.newLine();
-    _builder.append("        ");
+    _builder.append("\t       ");
     _builder.append("return CONTENT_URI.buildUpon().appendPath(String.valueOf(id)).build();");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("\t   ");
     _builder.append("}");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("\t   ");
     String _name_10 = stmt.getName();
     Iterable<ActionStatement> actions = this.findActionsForDefinition(model, _name_10);
     _builder.newLineIfNotEmpty();
@@ -1126,7 +1115,7 @@ public class ContentProviderContractGenerator {
     _builder.append("static {");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("HashSet<Uri> viewUris =  new HashSet<Uri>();");
+    _builder.append("Set<Uri> viewUris =  new HashSet<>();");
     _builder.newLine();
     _builder.append("\t\t");
     HashSet<CreateViewStatement> _allViewsReferencingTable = ModelUtil.getAllViewsReferencingTable(snapshot, stmt);
@@ -1146,7 +1135,6 @@ public class ContentProviderContractGenerator {
     };
     List<CreateViewStatement> initViews = IterableExtensions.<CreateViewStatement, String>sortBy(_allViewsInConfigInitReferencingTable, _function_1);
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
     _builder.newLine();
     {
       for(final CreateViewStatement ref : views) {
