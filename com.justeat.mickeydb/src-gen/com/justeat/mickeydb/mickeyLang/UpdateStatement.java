@@ -11,13 +11,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.UpdateStatement#getConflictResolution <em>Conflict Resolution</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.UpdateStatement#getTable <em>Table</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.UpdateStatement#getUpdateColumnExpressions <em>Update Column Expressions</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.UpdateStatement#getWhereExpression <em>Where Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getUpdateStatement()
  * @model

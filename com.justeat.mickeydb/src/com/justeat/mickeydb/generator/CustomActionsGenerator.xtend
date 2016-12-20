@@ -178,13 +178,13 @@ class CustomActionsGenerator {
 		«ENDIF»
 		«ENDFOR»'''
 
-	def createSlugVariables(ContentUriInfo content) '''«FOR entry : content.action.uri.segments.filter(
-		ContentUriParamSegment).indexed»
+	def createSlugVariables(ContentUriInfo content) '''
+		«FOR entry : content.action.uri.segments.filter(ContentUriParamSegment).indexed»
 		«var param = entry.value as ContentUriParamSegment»
 		«IF param.param.inferredColumnType != ColumnType::TEXT»
-		long «param.param.name.camelize»Slug = Long.parseLong(segments.get(«entry.key»));
+		long «param.param.name.camelize»Slug = Long.parseLong(segments.get(«content.action.uri.segments.indexOf(entry.value)»));
 		«ELSE»
-		String «param.param.name.camelize»Slug = segments.get(«entry.key»);
+		String «param.param.name.camelize»Slug = segments.get(«content.action.uri.segments.indexOf(entry.value)»);
 		«ENDIF» 
 		«ENDFOR»'''
 
@@ -192,7 +192,7 @@ class CustomActionsGenerator {
 		ContentUriParamSegment).indexed»
 		«var param = entry.value as ContentUriParamSegment»
 		«IF content.action.notifications.hasSegment(param.param.name.camelize)»
-String «param.param.name.camelize»Slug = segments.get(«entry.key»);
+String «param.param.name.camelize»Slug = segments.get(«content.action.uri.segments.indexOf(entry.value)»);
 		«ENDIF»
 		«ENDFOR»'''
 

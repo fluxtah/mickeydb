@@ -11,13 +11,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.IndexedColumn#getColumnReference <em>Column Reference</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.IndexedColumn#getCollationName <em>Collation Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.IndexedColumn#isAsc <em>Asc</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.IndexedColumn#isDesc <em>Desc</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getIndexedColumn()
  * @model

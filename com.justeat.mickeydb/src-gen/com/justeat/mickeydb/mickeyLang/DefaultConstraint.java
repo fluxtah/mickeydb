@@ -10,10 +10,10 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.DefaultConstraint#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getDefaultConstraint()
  * @model

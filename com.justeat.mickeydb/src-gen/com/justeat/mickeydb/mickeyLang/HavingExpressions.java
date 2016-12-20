@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.HavingExpressions#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getHavingExpressions()
  * @model

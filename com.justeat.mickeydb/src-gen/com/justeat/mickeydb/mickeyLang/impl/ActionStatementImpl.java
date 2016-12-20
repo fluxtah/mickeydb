@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.ActionStatementImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.ActionStatementImpl#getUri <em>Uri</em>}</li>
@@ -39,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.ActionStatementImpl#getParams <em>Params</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.ActionStatementImpl#getNotifications <em>Notifications</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

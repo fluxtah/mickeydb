@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.ContentUriQueryParamImpl#isLike <em>Like</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.ContentUriQueryParamImpl#getColumn <em>Column</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

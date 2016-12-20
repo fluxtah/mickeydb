@@ -19,10 +19,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.OldColumnImpl#getColumn <em>Column</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

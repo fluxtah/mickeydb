@@ -10,10 +10,10 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ContentUriParamSegment#getParam <em>Param</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getContentUriParamSegment()
  * @model

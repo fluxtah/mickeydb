@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.MickeyFunctionImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.MickeyFunctionImpl#getArgs <em>Args</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.MickeyFunctionImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.MickeyFunctionImpl#getStatements <em>Statements</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

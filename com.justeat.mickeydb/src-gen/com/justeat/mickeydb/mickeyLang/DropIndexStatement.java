@@ -10,11 +10,11 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.DropIndexStatement#isIfExists <em>If Exists</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.DropIndexStatement#getIndex <em>Index</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getDropIndexStatement()
  * @model

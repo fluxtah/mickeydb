@@ -10,12 +10,12 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ExprAdd#getLeft <em>Left</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ExprAdd#getOp <em>Op</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ExprAdd#getRight <em>Right</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getExprAdd()
  * @model

@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CaseImpl#getWhenExpression <em>When Expression</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CaseImpl#getThenExpression <em>Then Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

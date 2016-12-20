@@ -881,7 +881,7 @@ public class ContentProviderContractGenerator {
     _builder.append("*/");
     _builder.newLine();
     _builder.append("\t   ");
-    _builder.append("static final String CONTENT_TYPE =");
+    _builder.append("public static final String CONTENT_TYPE =");
     _builder.newLine();
     _builder.append("\t           ");
     _builder.append("\"vnd.android.cursor.dir/vnd.");

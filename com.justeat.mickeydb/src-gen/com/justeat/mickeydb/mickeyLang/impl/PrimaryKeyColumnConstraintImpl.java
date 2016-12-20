@@ -17,12 +17,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.PrimaryKeyColumnConstraintImpl#isAsc <em>Asc</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.PrimaryKeyColumnConstraintImpl#isDesc <em>Desc</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.PrimaryKeyColumnConstraintImpl#isAutoincrement <em>Autoincrement</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

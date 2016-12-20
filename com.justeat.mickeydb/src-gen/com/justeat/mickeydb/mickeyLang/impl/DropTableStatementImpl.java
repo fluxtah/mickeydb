@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.DropTableStatementImpl#isIfExists <em>If Exists</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.DropTableStatementImpl#getTable <em>Table</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -27,12 +27,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.FunctionImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.FunctionImpl#isAll <em>All</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.FunctionImpl#getArguments <em>Arguments</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

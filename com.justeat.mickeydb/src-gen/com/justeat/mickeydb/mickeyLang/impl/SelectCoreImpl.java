@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.SelectCoreImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.SelectCoreImpl#getOp <em>Op</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.SelectCoreImpl#getRight <em>Right</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

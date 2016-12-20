@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.UpdateColumnExpressionImpl#getColumnName <em>Column Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.UpdateColumnExpressionImpl#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

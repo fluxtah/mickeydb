@@ -10,12 +10,12 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectStatementExpression#isNot <em>Not</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectStatementExpression#isExists <em>Exists</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectStatementExpression#getSelect <em>Select</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getSelectStatementExpression()
  * @model

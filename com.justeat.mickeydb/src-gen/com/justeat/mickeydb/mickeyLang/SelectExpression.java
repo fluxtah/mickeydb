@@ -10,7 +10,6 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectExpression#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectExpression#isAll <em>All</em>}</li>
@@ -21,6 +20,7 @@ package com.justeat.mickeydb.mickeyLang;
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectExpression#getGroupBy <em>Group By</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectExpression#getHaving <em>Having</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getSelectExpression()
  * @model

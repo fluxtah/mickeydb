@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.JoinStatement#isNatural <em>Natural</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.JoinStatement#isLeft <em>Left</em>}</li>
@@ -21,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.justeat.mickeydb.mickeyLang.JoinStatement#getSingleSource <em>Single Source</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.JoinStatement#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getJoinStatement()
  * @model

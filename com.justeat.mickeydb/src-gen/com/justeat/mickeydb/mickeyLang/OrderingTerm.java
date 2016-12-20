@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.OrderingTerm#getExpression <em>Expression</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.OrderingTerm#isAsc <em>Asc</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.OrderingTerm#isDesc <em>Desc</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getOrderingTerm()
  * @model

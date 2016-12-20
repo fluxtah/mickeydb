@@ -10,11 +10,11 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.NullCheckExpression#getLeft <em>Left</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.NullCheckExpression#getRight <em>Right</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getNullCheckExpression()
  * @model

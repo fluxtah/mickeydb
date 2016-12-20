@@ -10,11 +10,11 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CreateViewStatement#isTemporary <em>Temporary</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CreateViewStatement#getSelectStatement <em>Select Statement</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getCreateViewStatement()
  * @model

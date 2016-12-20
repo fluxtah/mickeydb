@@ -10,11 +10,11 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.DeleteStatement#getTable <em>Table</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.DeleteStatement#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getDeleteStatement()
  * @model

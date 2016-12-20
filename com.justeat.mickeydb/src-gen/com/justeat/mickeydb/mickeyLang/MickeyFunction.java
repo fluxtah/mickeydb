@@ -11,13 +11,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.MickeyFunction#getName <em>Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.MickeyFunction#getArgs <em>Args</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.MickeyFunction#getType <em>Type</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.MickeyFunction#getStatements <em>Statements</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getMickeyFunction()
  * @model

@@ -28,12 +28,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CreateTableStatementImpl#isTemporary <em>Temporary</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CreateTableStatementImpl#getColumnDefs <em>Column Defs</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CreateTableStatementImpl#getConstraints <em>Constraints</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

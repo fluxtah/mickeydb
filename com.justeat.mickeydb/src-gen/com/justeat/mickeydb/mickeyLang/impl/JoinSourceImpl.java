@@ -29,11 +29,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.JoinSourceImpl#getSource <em>Source</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.JoinSourceImpl#getJoinStatements <em>Join Statements</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

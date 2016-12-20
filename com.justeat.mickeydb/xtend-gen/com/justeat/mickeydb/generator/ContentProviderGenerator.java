@@ -107,6 +107,7 @@ public class ContentProviderGenerator {
     _builder.append(_size, "\t\t\t");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("public Abstract");

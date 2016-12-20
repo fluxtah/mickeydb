@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.UniqueTableConstraintImpl#getColumns <em>Columns</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.UniqueTableConstraintImpl#getConflictClause <em>Conflict Clause</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

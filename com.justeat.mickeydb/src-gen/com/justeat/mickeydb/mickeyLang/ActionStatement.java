@@ -11,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ActionStatement#getName <em>Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ActionStatement#getUri <em>Uri</em>}</li>
@@ -20,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ActionStatement#getParams <em>Params</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ActionStatement#getNotifications <em>Notifications</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getActionStatement()
  * @model

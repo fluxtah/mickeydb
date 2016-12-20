@@ -11,12 +11,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CreateTableStatement#isTemporary <em>Temporary</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CreateTableStatement#getColumnDefs <em>Column Defs</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CreateTableStatement#getConstraints <em>Constraints</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getCreateTableStatement()
  * @model

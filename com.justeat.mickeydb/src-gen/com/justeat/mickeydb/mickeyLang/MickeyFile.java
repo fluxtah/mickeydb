@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.MickeyFile#getDatabaseName <em>Database Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.MickeyFile#getBlocks <em>Blocks</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getMickeyFile()
  * @model

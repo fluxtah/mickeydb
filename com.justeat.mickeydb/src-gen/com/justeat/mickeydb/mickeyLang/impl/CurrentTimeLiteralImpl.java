@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CurrentTimeLiteralImpl#getLiteral <em>Literal</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

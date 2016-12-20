@@ -28,13 +28,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CreateIndexStatementImpl#isUnique <em>Unique</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CreateIndexStatementImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CreateIndexStatementImpl#getTable <em>Table</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.CreateIndexStatementImpl#getColumns <em>Columns</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

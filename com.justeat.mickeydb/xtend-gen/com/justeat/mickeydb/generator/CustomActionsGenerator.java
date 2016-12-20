@@ -739,11 +739,9 @@ public class CustomActionsGenerator {
       ActionStatement _action = content.getAction();
       ContentUri _uri = _action.getUri();
       EList<ContentUriSegment> _segments = _uri.getSegments();
-      Iterable<ContentUriParamSegment> _filter = Iterables.<ContentUriParamSegment>filter(_segments, 
-        ContentUriParamSegment.class);
+      Iterable<ContentUriParamSegment> _filter = Iterables.<ContentUriParamSegment>filter(_segments, ContentUriParamSegment.class);
       Iterable<Pair<Integer, ContentUriParamSegment>> _indexed = IterableExtensions.<ContentUriParamSegment>indexed(_filter);
       for(final Pair<Integer, ContentUriParamSegment> entry : _indexed) {
-        _builder.newLineIfNotEmpty();
         ContentUriParamSegment _value = entry.getValue();
         ContentUriParamSegment param = ((ContentUriParamSegment) _value);
         _builder.newLineIfNotEmpty();
@@ -758,8 +756,12 @@ public class CustomActionsGenerator {
             String _camelize = Strings.camelize(_name);
             _builder.append(_camelize, "");
             _builder.append("Slug = Long.parseLong(segments.get(");
-            Integer _key = entry.getKey();
-            _builder.append(_key, "");
+            ActionStatement _action_1 = content.getAction();
+            ContentUri _uri_1 = _action_1.getUri();
+            EList<ContentUriSegment> _segments_1 = _uri_1.getSegments();
+            ContentUriParamSegment _value_1 = entry.getValue();
+            int _indexOf = _segments_1.indexOf(_value_1);
+            _builder.append(_indexOf, "");
             _builder.append("));");
             _builder.newLineIfNotEmpty();
           } else {
@@ -769,8 +771,12 @@ public class CustomActionsGenerator {
             String _camelize_1 = Strings.camelize(_name_1);
             _builder.append(_camelize_1, "");
             _builder.append("Slug = segments.get(");
-            Integer _key_1 = entry.getKey();
-            _builder.append(_key_1, "");
+            ActionStatement _action_2 = content.getAction();
+            ContentUri _uri_2 = _action_2.getUri();
+            EList<ContentUriSegment> _segments_2 = _uri_2.getSegments();
+            ContentUriParamSegment _value_2 = entry.getValue();
+            int _indexOf_1 = _segments_2.indexOf(_value_2);
+            _builder.append(_indexOf_1, "");
             _builder.append(");");
             _builder.newLineIfNotEmpty();
           }
@@ -808,8 +814,12 @@ public class CustomActionsGenerator {
             String _camelize_1 = Strings.camelize(_name_1);
             _builder.append(_camelize_1, "");
             _builder.append("Slug = segments.get(");
-            Integer _key = entry.getKey();
-            _builder.append(_key, "");
+            ActionStatement _action_2 = content.getAction();
+            ContentUri _uri_1 = _action_2.getUri();
+            EList<ContentUriSegment> _segments_1 = _uri_1.getSegments();
+            ContentUriParamSegment _value_1 = entry.getValue();
+            int _indexOf = _segments_1.indexOf(_value_1);
+            _builder.append(_indexOf, "");
             _builder.append(");");
             _builder.newLineIfNotEmpty();
           }

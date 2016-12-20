@@ -11,10 +11,10 @@ import java.math.BigDecimal;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.NumericLiteral#getNumber <em>Number</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getNumericLiteral()
  * @model

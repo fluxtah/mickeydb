@@ -10,13 +10,13 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectStatement#getCore <em>Core</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectStatement#getOrderby <em>Orderby</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectStatement#getLimit <em>Limit</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.SelectStatement#getLimitOffset <em>Limit Offset</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getSelectStatement()
  * @model

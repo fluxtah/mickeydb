@@ -10,12 +10,12 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ColumnSourceRef#getSource <em>Source</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ColumnSourceRef#isAll <em>All</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ColumnSourceRef#getColumn <em>Column</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getColumnSourceRef()
  * @model

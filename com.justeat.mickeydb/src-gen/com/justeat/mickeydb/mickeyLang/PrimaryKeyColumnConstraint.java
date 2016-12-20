@@ -10,12 +10,12 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.PrimaryKeyColumnConstraint#isAsc <em>Asc</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.PrimaryKeyColumnConstraint#isDesc <em>Desc</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.PrimaryKeyColumnConstraint#isAutoincrement <em>Autoincrement</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getPrimaryKeyColumnConstraint()
  * @model

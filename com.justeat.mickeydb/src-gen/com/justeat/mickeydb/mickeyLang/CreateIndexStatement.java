@@ -11,13 +11,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CreateIndexStatement#isUnique <em>Unique</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CreateIndexStatement#getName <em>Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CreateIndexStatement#getTable <em>Table</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CreateIndexStatement#getColumns <em>Columns</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getCreateIndexStatement()
  * @model

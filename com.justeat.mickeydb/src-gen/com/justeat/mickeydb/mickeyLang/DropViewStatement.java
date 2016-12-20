@@ -10,11 +10,11 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.DropViewStatement#isIfExists <em>If Exists</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.DropViewStatement#getView <em>View</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getDropViewStatement()
  * @model

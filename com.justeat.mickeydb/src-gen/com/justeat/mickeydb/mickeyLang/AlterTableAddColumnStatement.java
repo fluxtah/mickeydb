@@ -10,11 +10,11 @@ package com.justeat.mickeydb.mickeyLang;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.AlterTableAddColumnStatement#getTable <em>Table</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.AlterTableAddColumnStatement#getColumnDef <em>Column Def</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getAlterTableAddColumnStatement()
  * @model

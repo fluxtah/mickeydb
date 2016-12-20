@@ -11,11 +11,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ColumnDef#getType <em>Type</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.ColumnDef#getConstraints <em>Constraints</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getColumnDef()
  * @model

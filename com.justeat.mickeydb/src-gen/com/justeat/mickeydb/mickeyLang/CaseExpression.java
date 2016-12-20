@@ -11,12 +11,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CaseExpression#getCaseExpression <em>Case Expression</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CaseExpression#getCases <em>Cases</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.CaseExpression#getElseExpression <em>Else Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @see com.justeat.mickeydb.mickeyLang.MickeyLangPackage#getCaseExpression()
  * @model

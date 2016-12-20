@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.MickeyFileImpl#getDatabaseName <em>Database Name</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.MickeyFileImpl#getBlocks <em>Blocks</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
