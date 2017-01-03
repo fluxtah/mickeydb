@@ -13,6 +13,8 @@
  */
 package com.justeat.mickeydb;
 
+import java.io.File;
+import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -75,9 +77,43 @@ public abstract class MickeyContentProvider extends ContentProvider {
         final Context context = getContext();
         mUriMatcher = createUriMatcher();
         mContentTypes = createContentTypes();
-        mOpenHelper = createOpenHelper(context);
+        
+        String databaseFileName = createDatabaseFilename(getDatabaseName(), getDatabaseVersion());
+        cleanupOldDatabaseFileVersions(databaseFileName);
+        mOpenHelper = createOpenHelper(context, databaseFileName);
 		return true;
 	}
+	
+	protected String createDatabaseFilename(String databaseName, int databaseVersion) {
+		return databaseName + (databaseVersion <= 0 ? "" : "." + databaseVersion) + ".db";
+	}
+
+	protected void cleanupOldDatabaseFileVersions(String currentDatabaseFilename) {
+
+        File dbFile = getContext().getDatabasePath(currentDatabaseFilename);
+        
+        if (!dbFile.exists()) {
+			if(mDebug) {
+				MickeyLogger.d(Mickey.TAG, "Create File", "%s", currentDatabaseFilename);
+			}	
+            File[] files = dbFile.getParentFile().listFiles(new FilenameFilter() {
+                @Override
+                public boolean accept(File file, String s) {
+                    return s.matches(getDatabaseName() + ".*db");
+                }
+            });
+
+            for (File file : files) {
+    			if(mDebug) {
+    				MickeyLogger.d(Mickey.TAG, "Delete Old Version", "%s", file.getName());
+    			}	
+                file.delete();
+            }
+        }
+	}
+
+	protected abstract String getDatabaseName();
+	protected abstract int getDatabaseVersion();
 	
 	protected abstract UriMatcher createUriMatcher();
 	
@@ -94,7 +130,7 @@ public abstract class MickeyContentProvider extends ContentProvider {
 		return actions;
 	}
 
-	protected abstract MickeyOpenHelper createOpenHelper(Context context);
+	protected abstract MickeyOpenHelper createOpenHelper(Context context, String databaseFilename);
 	
 	protected abstract Set<Uri> getRelatedUris(Uri uri);
 

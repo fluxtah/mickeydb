@@ -100,19 +100,41 @@ ruleMickeyFile returns [EObject current=null]
 	    }
 
 )
-)(
+)(	otherlv_2='version' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getMickeyFileAccess().getVersionKeyword_2_0());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMickeyFileAccess().getBlocksMickeyBlockParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getMickeyFileAccess().getVersionSignedNumberParserRuleCall_2_1_0()); 
 	    }
-		lv_blocks_2_0=ruleMickeyBlock		{
+		lv_version_3_0=ruleSignedNumber		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMickeyFileRule());
+	        }
+       		set(
+       			$current, 
+       			"version",
+        		lv_version_3_0, 
+        		"SignedNumber");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMickeyFileAccess().getBlocksMickeyBlockParserRuleCall_3_0()); 
+	    }
+		lv_blocks_4_0=ruleMickeyBlock		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMickeyFileRule());
 	        }
        		add(
        			$current, 
        			"blocks",
-        		lv_blocks_2_0, 
+        		lv_blocks_4_0, 
         		"MickeyBlock");
 	        afterParserOrEnumRuleCall();
 	    }

@@ -14,6 +14,7 @@ class MickeyDatabaseModel {
 		
 	@Accessors String packageName
 	@Accessors String databaseName
+	@Accessors int version = 0;
 	@Accessors SqliteDatabaseSnapshot snapshot
 	public var migrations = new ArrayList<MigrationBlock>();
 	public var migrationsByName = new Hashtable<String, MigrationBlock>();
@@ -23,7 +24,7 @@ class MickeyDatabaseModel {
 	public var functions = new ArrayList<MickeyFunction>();
 	public var actions = new ArrayList<ActionStatement>();
 	
-	new(String databaseFqn) {
+	new(String databaseFqn, int version) {
 		if(databaseFqn.contains(".")) {
 			var s = databaseFqn.lastIndexOf(".")
 			packageName = databaseFqn.substring(0, s)
@@ -32,5 +33,7 @@ class MickeyDatabaseModel {
 			packageName = databaseFqn;
 			databaseName = databaseFqn;			
 		}
+
+		this.version = version;
 	}
 }

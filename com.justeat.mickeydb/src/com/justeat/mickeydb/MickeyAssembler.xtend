@@ -69,7 +69,7 @@ class MickeyAssembler {
 		var result = model.databases.get(file.databaseName)
 		
 		if(result == null) {
-			result = new MickeyDatabaseModel(file.databaseName);
+			result = new MickeyDatabaseModel(file.databaseName, file.version.intValue);
 			model.databases.put(file.databaseName, result)
 		}
 		

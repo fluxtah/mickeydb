@@ -107,12 +107,26 @@ public class ContentProviderGenerator {
     _builder.append(_size, "\t\t\t");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
+    _builder.append("\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("public static final String DATABASE_NAME = \"");
+    String _databaseName_1 = model.getDatabaseName();
+    _builder.append(_databaseName_1, "\t\t\t");
+    _builder.append("\";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append("public static final int DATABASE_VERSION = ");
+    int _version = model.getVersion();
+    _builder.append(_version, "\t\t\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("public Abstract");
-    String _databaseName_1 = model.getDatabaseName();
-    String _pascalize_2 = Strings.pascalize(_databaseName_1);
+    String _databaseName_2 = model.getDatabaseName();
+    String _pascalize_2 = Strings.pascalize(_databaseName_2);
     _builder.append(_pascalize_2, "\t\t\t");
     _builder.append("ContentProvider(boolean debug) {");
     _builder.newLineIfNotEmpty();
@@ -125,8 +139,8 @@ public class ContentProviderGenerator {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("public Abstract");
-    String _databaseName_2 = model.getDatabaseName();
-    String _pascalize_3 = Strings.pascalize(_databaseName_2);
+    String _databaseName_3 = model.getDatabaseName();
+    String _pascalize_3 = Strings.pascalize(_databaseName_3);
     _builder.append(_pascalize_3, "\t\t\t");
     _builder.append("ContentProvider() {");
     _builder.newLineIfNotEmpty();
@@ -149,8 +163,8 @@ public class ContentProviderGenerator {
     _builder.newLine();
     _builder.append("\t\t        ");
     _builder.append("final String authority = ");
-    String _databaseName_3 = model.getDatabaseName();
-    String _pascalize_4 = Strings.pascalize(_databaseName_3);
+    String _databaseName_4 = model.getDatabaseName();
+    String _pascalize_4 = Strings.pascalize(_databaseName_4);
     _builder.append(_pascalize_4, "\t\t        ");
     _builder.append("Contract.CONTENT_AUTHORITY;");
     _builder.newLineIfNotEmpty();
@@ -199,8 +213,8 @@ public class ContentProviderGenerator {
             String _id_2 = uri_3.getId();
             _builder.append(_id_2, "\t\t\t\t");
             _builder.append("] = ");
-            String _databaseName_4 = model.getDatabaseName();
-            String _pascalize_5 = Strings.pascalize(_databaseName_4);
+            String _databaseName_5 = model.getDatabaseName();
+            String _pascalize_5 = Strings.pascalize(_databaseName_5);
             _builder.append(_pascalize_5, "\t\t\t\t");
             _builder.append("Contract.");
             String _type = uri_3.getType();
@@ -214,8 +228,8 @@ public class ContentProviderGenerator {
             String _id_3 = uri_3.getId();
             _builder.append(_id_3, "\t\t\t\t");
             _builder.append("] = ");
-            String _databaseName_5 = model.getDatabaseName();
-            String _pascalize_7 = Strings.pascalize(_databaseName_5);
+            String _databaseName_6 = model.getDatabaseName();
+            String _pascalize_7 = Strings.pascalize(_databaseName_6);
             _builder.append(_pascalize_7, "\t\t\t\t");
             _builder.append("Contract.");
             String _type_1 = uri_3.getType();
@@ -240,15 +254,43 @@ public class ContentProviderGenerator {
     _builder.append("@Override");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append("protected MickeyOpenHelper createOpenHelper(Context context) {");
+    _builder.append("protected MickeyOpenHelper createOpenHelper(Context context, String databaseFilename) {");
     _builder.newLine();
     _builder.append("\t\t        ");
     _builder.append("return new ");
-    String _databaseName_6 = model.getDatabaseName();
-    String _pascalize_9 = Strings.pascalize(_databaseName_6);
+    String _databaseName_7 = model.getDatabaseName();
+    String _pascalize_9 = Strings.pascalize(_databaseName_7);
     _builder.append(_pascalize_9, "\t\t        ");
-    _builder.append("OpenHelper(context);");
+    _builder.append("OpenHelper(context, databaseFilename);");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("protected int getDatabaseVersion() {");
+    _builder.newLine();
+    _builder.append("\t\t        ");
+    _builder.append("return DATABASE_VERSION;");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("protected String getDatabaseName() {");
+    _builder.newLine();
+    _builder.append("\t\t        ");
+    _builder.append("return DATABASE_NAME;");
+    _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("}");
     _builder.newLine();
@@ -262,8 +304,8 @@ public class ContentProviderGenerator {
     _builder.newLine();
     _builder.append("\t\t\t\t");
     _builder.append("return ");
-    String _databaseName_7 = model.getDatabaseName();
-    String _pascalize_10 = Strings.pascalize(_databaseName_7);
+    String _databaseName_8 = model.getDatabaseName();
+    String _pascalize_10 = Strings.pascalize(_databaseName_8);
     _builder.append(_pascalize_10, "\t\t\t\t");
     _builder.append("Contract.REFERENCING_VIEWS.get(uri);");
     _builder.newLineIfNotEmpty();
@@ -387,6 +429,16 @@ public class ContentProviderGenerator {
       String _plus_3 = (_plus_2 + _pascalize_3);
       return (_plus_3 + ".CONTENT_TYPE");
     }
+  }
+  
+  public String generateDatabaseFileVersion(final MickeyDatabaseModel model) {
+    int _version = model.getVersion();
+    boolean _equals = (_version == 0);
+    if (_equals) {
+      return "";
+    }
+    int _version_1 = model.getVersion();
+    return ("." + Integer.valueOf(_version_1));
   }
   
   public CharSequence generateStub(final MickeyDatabaseModel model, final SqliteDatabaseSnapshot snapshot) {

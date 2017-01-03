@@ -15,6 +15,7 @@ import com.justeat.mickeydb.mickeyLang.MickeyBlock;
 import com.justeat.mickeydb.mickeyLang.MickeyFile;
 import com.justeat.mickeydb.mickeyLang.MickeyFunction;
 import com.justeat.mickeydb.mickeyLang.MigrationBlock;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -165,7 +166,9 @@ public class MickeyAssembler {
     boolean _equals = Objects.equal(result, null);
     if (_equals) {
       String _databaseName_1 = file.getDatabaseName();
-      MickeyDatabaseModel _mickeyDatabaseModel = new MickeyDatabaseModel(_databaseName_1);
+      BigDecimal _version = file.getVersion();
+      int _intValue = _version.intValue();
+      MickeyDatabaseModel _mickeyDatabaseModel = new MickeyDatabaseModel(_databaseName_1, _intValue);
       result = _mickeyDatabaseModel;
       String _databaseName_2 = file.getDatabaseName();
       model.databases.put(_databaseName_2, result);

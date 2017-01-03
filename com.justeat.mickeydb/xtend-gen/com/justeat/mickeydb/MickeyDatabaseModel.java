@@ -20,6 +20,9 @@ public class MickeyDatabaseModel {
   private String databaseName;
   
   @Accessors
+  private int version = 0;
+  
+  @Accessors
   private SqliteDatabaseSnapshot snapshot;
   
   public ArrayList<MigrationBlock> migrations = new ArrayList<MigrationBlock>();
@@ -36,7 +39,7 @@ public class MickeyDatabaseModel {
   
   public ArrayList<ActionStatement> actions = new ArrayList<ActionStatement>();
   
-  public MickeyDatabaseModel(final String databaseFqn) {
+  public MickeyDatabaseModel(final String databaseFqn, final int version) {
     boolean _contains = databaseFqn.contains(".");
     if (_contains) {
       int s = databaseFqn.lastIndexOf(".");
@@ -48,6 +51,7 @@ public class MickeyDatabaseModel {
       this.packageName = databaseFqn;
       this.databaseName = databaseFqn;
     }
+    this.version = version;
   }
   
   @Pure
@@ -66,6 +70,15 @@ public class MickeyDatabaseModel {
   
   public void setDatabaseName(final String databaseName) {
     this.databaseName = databaseName;
+  }
+  
+  @Pure
+  public int getVersion() {
+    return this.version;
+  }
+  
+  public void setVersion(final int version) {
+    this.version = version;
   }
   
   @Pure

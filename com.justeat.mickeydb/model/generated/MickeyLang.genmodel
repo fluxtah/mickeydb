@@ -37,6 +37,7 @@
     </genEnums>
     <genClasses ecoreClass="MickeyLang.ecore#//MickeyFile">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MickeyLang.ecore#//MickeyFile/databaseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MickeyLang.ecore#//MickeyFile/version"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MickeyLang.ecore#//MickeyFile/blocks"/>
     </genClasses>
     <genClasses ecoreClass="MickeyLang.ecore#//MickeyBlock"/>

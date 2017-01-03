@@ -75,6 +75,7 @@ public class MickeyLangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getColumnTypeAccess().getAlternatives(), "rule__ColumnType__Alternatives");
 					put(grammarAccess.getConflictResolutionAccess().getAlternatives(), "rule__ConflictResolution__Alternatives");
 					put(grammarAccess.getMickeyFileAccess().getGroup(), "rule__MickeyFile__Group__0");
+					put(grammarAccess.getMickeyFileAccess().getGroup_2(), "rule__MickeyFile__Group_2__0");
 					put(grammarAccess.getMickeyFunctionAccess().getGroup(), "rule__MickeyFunction__Group__0");
 					put(grammarAccess.getMickeyFunctionAccess().getGroup_3(), "rule__MickeyFunction__Group_3__0");
 					put(grammarAccess.getMickeyFunctionAccess().getGroup_3_1(), "rule__MickeyFunction__Group_3_1__0");
@@ -221,7 +222,8 @@ public class MickeyLangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getMickeyFileAccess().getDatabaseNameAssignment_1(), "rule__MickeyFile__DatabaseNameAssignment_1");
-					put(grammarAccess.getMickeyFileAccess().getBlocksAssignment_2(), "rule__MickeyFile__BlocksAssignment_2");
+					put(grammarAccess.getMickeyFileAccess().getVersionAssignment_2_1(), "rule__MickeyFile__VersionAssignment_2_1");
+					put(grammarAccess.getMickeyFileAccess().getBlocksAssignment_3(), "rule__MickeyFile__BlocksAssignment_3");
 					put(grammarAccess.getMickeyFunctionAccess().getNameAssignment_1(), "rule__MickeyFunction__NameAssignment_1");
 					put(grammarAccess.getMickeyFunctionAccess().getArgsAssignment_3_0(), "rule__MickeyFunction__ArgsAssignment_3_0");
 					put(grammarAccess.getMickeyFunctionAccess().getArgsAssignment_3_1_1(), "rule__MickeyFunction__ArgsAssignment_3_1_1");

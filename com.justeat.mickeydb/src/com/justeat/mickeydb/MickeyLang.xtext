@@ -10,6 +10,7 @@ generate mickeyLang "http://www.justeat.com/mickeydb/MickeyLang"
  ***********************************************************************/
 MickeyFile:
 	'database' databaseName=QualifiedName
+	('version' version=SignedNumber)?
 	 blocks+=MickeyBlock*;
 
 MickeyBlock:

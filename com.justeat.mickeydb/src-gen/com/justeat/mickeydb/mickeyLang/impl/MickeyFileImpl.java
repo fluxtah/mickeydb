@@ -6,6 +6,8 @@ import com.justeat.mickeydb.mickeyLang.MickeyBlock;
 import com.justeat.mickeydb.mickeyLang.MickeyFile;
 import com.justeat.mickeydb.mickeyLang.MickeyLangPackage;
 
+import java.math.BigDecimal;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -30,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.MickeyFileImpl#getDatabaseName <em>Database Name</em>}</li>
+ *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.MickeyFileImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link com.justeat.mickeydb.mickeyLang.impl.MickeyFileImpl#getBlocks <em>Blocks</em>}</li>
  * </ul>
  * </p>
@@ -57,6 +60,26 @@ public class MickeyFileImpl extends MinimalEObjectImpl.Container implements Mick
    * @ordered
    */
   protected String databaseName = DATABASE_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVersion()
+   * @generated
+   * @ordered
+   */
+  protected static final BigDecimal VERSION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVersion()
+   * @generated
+   * @ordered
+   */
+  protected BigDecimal version = VERSION_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getBlocks() <em>Blocks</em>}' containment reference list.
@@ -117,6 +140,29 @@ public class MickeyFileImpl extends MinimalEObjectImpl.Container implements Mick
    * <!-- end-user-doc -->
    * @generated
    */
+  public BigDecimal getVersion()
+  {
+    return version;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVersion(BigDecimal newVersion)
+  {
+    BigDecimal oldVersion = version;
+    version = newVersion;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MickeyLangPackage.MICKEY_FILE__VERSION, oldVersion, version));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<MickeyBlock> getBlocks()
   {
     if (blocks == null)
@@ -154,6 +200,8 @@ public class MickeyFileImpl extends MinimalEObjectImpl.Container implements Mick
     {
       case MickeyLangPackage.MICKEY_FILE__DATABASE_NAME:
         return getDatabaseName();
+      case MickeyLangPackage.MICKEY_FILE__VERSION:
+        return getVersion();
       case MickeyLangPackage.MICKEY_FILE__BLOCKS:
         return getBlocks();
     }
@@ -173,6 +221,9 @@ public class MickeyFileImpl extends MinimalEObjectImpl.Container implements Mick
     {
       case MickeyLangPackage.MICKEY_FILE__DATABASE_NAME:
         setDatabaseName((String)newValue);
+        return;
+      case MickeyLangPackage.MICKEY_FILE__VERSION:
+        setVersion((BigDecimal)newValue);
         return;
       case MickeyLangPackage.MICKEY_FILE__BLOCKS:
         getBlocks().clear();
@@ -195,6 +246,9 @@ public class MickeyFileImpl extends MinimalEObjectImpl.Container implements Mick
       case MickeyLangPackage.MICKEY_FILE__DATABASE_NAME:
         setDatabaseName(DATABASE_NAME_EDEFAULT);
         return;
+      case MickeyLangPackage.MICKEY_FILE__VERSION:
+        setVersion(VERSION_EDEFAULT);
+        return;
       case MickeyLangPackage.MICKEY_FILE__BLOCKS:
         getBlocks().clear();
         return;
@@ -214,6 +268,8 @@ public class MickeyFileImpl extends MinimalEObjectImpl.Container implements Mick
     {
       case MickeyLangPackage.MICKEY_FILE__DATABASE_NAME:
         return DATABASE_NAME_EDEFAULT == null ? databaseName != null : !DATABASE_NAME_EDEFAULT.equals(databaseName);
+      case MickeyLangPackage.MICKEY_FILE__VERSION:
+        return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
       case MickeyLangPackage.MICKEY_FILE__BLOCKS:
         return blocks != null && !blocks.isEmpty();
     }
@@ -233,6 +289,8 @@ public class MickeyFileImpl extends MinimalEObjectImpl.Container implements Mick
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (databaseName: ");
     result.append(databaseName);
+    result.append(", version: ");
+    result.append(version);
     result.append(')');
     return result.toString();
   }

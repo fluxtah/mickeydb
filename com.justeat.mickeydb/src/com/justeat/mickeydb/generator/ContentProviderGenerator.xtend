@@ -36,7 +36,10 @@ class ContentProviderGenerator {
 				public static final int «uri.id» = «counter=counter+1»;
 				«ENDFOR»
 				public static final int NUM_URI_MATCHERS = «content.uris.size»;
-			
+				
+				public static final String DATABASE_NAME = "«model.databaseName»";
+				public static final int DATABASE_VERSION = «model.version»;
+				
 				public Abstract«model.databaseName.pascalize»ContentProvider(boolean debug) {
 					super(debug);
 				}
@@ -73,8 +76,18 @@ class ContentProviderGenerator {
 			    }
 			
 				@Override
-				protected MickeyOpenHelper createOpenHelper(Context context) {
-			        return new «model.databaseName.pascalize»OpenHelper(context);
+				protected MickeyOpenHelper createOpenHelper(Context context, String databaseFilename) {
+			        return new «model.databaseName.pascalize»OpenHelper(context, databaseFilename);
+				}
+				
+				@Override
+				protected int getDatabaseVersion() {
+			        return DATABASE_VERSION;
+				}
+				
+				@Override
+				protected String getDatabaseName() {
+			        return DATABASE_NAME;
 				}
 				
 				@Override
@@ -131,6 +144,14 @@ class ContentProviderGenerator {
 			} else {
 				return databaseName.pascalize + "Contract." + action.type.name.pascalize + ".CONTENT_TYPE";
 			}
+		}
+		
+		def generateDatabaseFileVersion(MickeyDatabaseModel model) {
+			if(model.version == 0) {
+				return ""
+			}
+			
+			return "." + model.version
 		}
 
 			

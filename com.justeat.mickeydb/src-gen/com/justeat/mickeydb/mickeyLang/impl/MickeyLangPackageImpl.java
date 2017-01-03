@@ -909,9 +909,19 @@ public class MickeyLangPackageImpl extends EPackageImpl implements MickeyLangPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getMickeyFile_Version()
+  {
+    return (EAttribute)mickeyFileEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getMickeyFile_Blocks()
   {
-    return (EReference)mickeyFileEClass.getEStructuralFeatures().get(1);
+    return (EReference)mickeyFileEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3726,6 +3736,7 @@ public class MickeyLangPackageImpl extends EPackageImpl implements MickeyLangPac
     // Create classes and their features
     mickeyFileEClass = createEClass(MICKEY_FILE);
     createEAttribute(mickeyFileEClass, MICKEY_FILE__DATABASE_NAME);
+    createEAttribute(mickeyFileEClass, MICKEY_FILE__VERSION);
     createEReference(mickeyFileEClass, MICKEY_FILE__BLOCKS);
 
     mickeyBlockEClass = createEClass(MICKEY_BLOCK);
@@ -4203,6 +4214,7 @@ public class MickeyLangPackageImpl extends EPackageImpl implements MickeyLangPac
     // Initialize classes and features; add operations and parameters
     initEClass(mickeyFileEClass, MickeyFile.class, "MickeyFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMickeyFile_DatabaseName(), ecorePackage.getEString(), "databaseName", null, 0, 1, MickeyFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMickeyFile_Version(), ecorePackage.getEBigDecimal(), "version", null, 0, 1, MickeyFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMickeyFile_Blocks(), this.getMickeyBlock(), null, "blocks", null, 0, -1, MickeyFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mickeyBlockEClass, MickeyBlock.class, "MickeyBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

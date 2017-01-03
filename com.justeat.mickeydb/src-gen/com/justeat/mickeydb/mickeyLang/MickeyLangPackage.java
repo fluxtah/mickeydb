@@ -77,13 +77,22 @@ public interface MickeyLangPackage extends EPackage
   int MICKEY_FILE__DATABASE_NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Version</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MICKEY_FILE__VERSION = 1;
+
+  /**
    * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MICKEY_FILE__BLOCKS = 1;
+  int MICKEY_FILE__BLOCKS = 2;
 
   /**
    * The number of structural features of the '<em>Mickey File</em>' class.
@@ -92,7 +101,7 @@ public interface MickeyLangPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MICKEY_FILE_FEATURE_COUNT = 2;
+  int MICKEY_FILE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.justeat.mickeydb.mickeyLang.impl.MickeyBlockImpl <em>Mickey Block</em>}' class.
@@ -3681,6 +3690,17 @@ public interface MickeyLangPackage extends EPackage
   EAttribute getMickeyFile_DatabaseName();
 
   /**
+   * Returns the meta object for the attribute '{@link com.justeat.mickeydb.mickeyLang.MickeyFile#getVersion <em>Version</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Version</em>'.
+   * @see com.justeat.mickeydb.mickeyLang.MickeyFile#getVersion()
+   * @see #getMickeyFile()
+   * @generated
+   */
+  EAttribute getMickeyFile_Version();
+
+  /**
    * Returns the meta object for the containment reference list '{@link com.justeat.mickeydb.mickeyLang.MickeyFile#getBlocks <em>Blocks</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6690,6 +6710,14 @@ public interface MickeyLangPackage extends EPackage
      * @generated
      */
     EAttribute MICKEY_FILE__DATABASE_NAME = eINSTANCE.getMickeyFile_DatabaseName();
+
+    /**
+     * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MICKEY_FILE__VERSION = eINSTANCE.getMickeyFile_Version();
 
     /**
      * The meta object literal for the '<em><b>Blocks</b></em>' containment reference list feature.

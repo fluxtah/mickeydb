@@ -1581,7 +1581,7 @@ public class MickeyLangSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (databaseName=QualifiedName blocks+=MickeyBlock*)
+	 *     (databaseName=QualifiedName version=SignedNumber? blocks+=MickeyBlock*)
 	 */
 	protected void sequence_MickeyFile(EObject context, MickeyFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

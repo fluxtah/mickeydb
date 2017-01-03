@@ -24,18 +24,22 @@ public class MickeyLangGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDatabaseKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cDatabaseNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDatabaseNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cDatabaseNameAssignment_1.eContents().get(0);
-		private final Assignment cBlocksAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cBlocksMickeyBlockParserRuleCall_2_0 = (RuleCall)cBlocksAssignment_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cVersionKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cVersionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cVersionSignedNumberParserRuleCall_2_1_0 = (RuleCall)cVersionAssignment_2_1.eContents().get(0);
+		private final Assignment cBlocksAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cBlocksMickeyBlockParserRuleCall_3_0 = (RuleCall)cBlocksAssignment_3.eContents().get(0);
 		
 		/// ***********************************************************************
 		// *                                                                     *
 		// * CORE                                                                *
 		// *                                                                     *
 		// *********************************************************************** / MickeyFile:
-		//	"database" databaseName=QualifiedName blocks+=MickeyBlock*;
+		//	"database" databaseName=QualifiedName ("version" version=SignedNumber)? blocks+=MickeyBlock*;
 		public ParserRule getRule() { return rule; }
 
-		//"database" databaseName=QualifiedName blocks+=MickeyBlock*
+		//"database" databaseName=QualifiedName ("version" version=SignedNumber)? blocks+=MickeyBlock*
 		public Group getGroup() { return cGroup; }
 
 		//"database"
@@ -47,11 +51,23 @@ public class MickeyLangGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getDatabaseNameQualifiedNameParserRuleCall_1_0() { return cDatabaseNameQualifiedNameParserRuleCall_1_0; }
 
+		//("version" version=SignedNumber)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"version"
+		public Keyword getVersionKeyword_2_0() { return cVersionKeyword_2_0; }
+
+		//version=SignedNumber
+		public Assignment getVersionAssignment_2_1() { return cVersionAssignment_2_1; }
+
+		//SignedNumber
+		public RuleCall getVersionSignedNumberParserRuleCall_2_1_0() { return cVersionSignedNumberParserRuleCall_2_1_0; }
+
 		//blocks+=MickeyBlock*
-		public Assignment getBlocksAssignment_2() { return cBlocksAssignment_2; }
+		public Assignment getBlocksAssignment_3() { return cBlocksAssignment_3; }
 
 		//MickeyBlock
-		public RuleCall getBlocksMickeyBlockParserRuleCall_2_0() { return cBlocksMickeyBlockParserRuleCall_2_0; }
+		public RuleCall getBlocksMickeyBlockParserRuleCall_3_0() { return cBlocksMickeyBlockParserRuleCall_3_0; }
 	}
 
 	public class MickeyBlockElements extends AbstractParserRuleElementFinder {
@@ -4547,7 +4563,7 @@ public class MickeyLangGrammarAccess extends AbstractGrammarElementFinder {
 	// * CORE                                                                *
 	// *                                                                     *
 	// *********************************************************************** / MickeyFile:
-	//	"database" databaseName=QualifiedName blocks+=MickeyBlock*;
+	//	"database" databaseName=QualifiedName ("version" version=SignedNumber)? blocks+=MickeyBlock*;
 	public MickeyFileElements getMickeyFileAccess() {
 		return pMickeyFile;
 	}
